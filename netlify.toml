@@ -1,0 +1,11 @@
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
+  query = {path = ":id"} #  apply this rule for /old-path?path=example
+  
+[[redirects]]
+  from = "/"
+  to = "/"
+  status = 404
