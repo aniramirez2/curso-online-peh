@@ -102,7 +102,7 @@ export const Landing = ({params}) => {
 				</Box>
 				<Box textAlign="center">
 					{data[1].textAfterCta}
-				</Box>
+				</Box> 
 			</Box>
 			<Box backgroundColor={data[2].backgroundColor} color={data[2].textColor} id="section3">
 				<Box textAlign="center">
