@@ -16,9 +16,10 @@ export const Landing = () => {
 		try {
 			const { data  } = await api.get();
 			const sections = data.result.find(item => item._id === "da59f881-f087-47b2-8e22-dc7c0b070981").content;
-			console.log("result",sections )
-			const sortedData = sections
-			setData(sortedData);
+			sections.forEach(element => {				
+				element.whatsapp = id;
+			});
+			setData(sections);
 		 } catch (error) {
 			console.log('error', error);
 		 }
@@ -30,10 +31,11 @@ export const Landing = () => {
 		 } else {
 			navigate('/')
 		 }
-	 }, [id, navigate]);
+		 // eslint-disable-next-line
+	 }, []);
 
 	return (
-		<div>
+		<>
 			{data.map(section => (
 				<>
 				{section.sectionType === 'main' ? 
@@ -57,6 +59,6 @@ export const Landing = () => {
 				}
 			</>
 			))}
-		</div>
+		</>
 	);
 }
