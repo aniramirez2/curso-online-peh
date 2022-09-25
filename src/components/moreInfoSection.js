@@ -7,15 +7,15 @@ export const MoreInfoSection = ({section}) => {
     return markDefs.find(item => item._key === id) ? {'color': markDefs[0].hex} : {'textDecoration': children.marks[0]}
   }
 return (
-  <Box py={[5,8]} height={["100vh", "auto"]} key={section.sectionType} backgroundColor={section.backgroundColor.hex} color={section.textColor.hex} id={section.sectionType}>
+  <Box py={[5,8]} height={["auto", "auto"]} key={section.sectionType} backgroundColor={section.backgroundColor.hex} color={section.textColor.hex} id={section.sectionType}>
     <Box py={[5,10]} textAlign="center" fontSize={["28px", "48px"]} lineHeight="1.1em" fontWeight="500">
       {section.lineOne[0]?.children.map(item => item.marks.length ? <span style={getBoxClassNames(item.marks[0], section.lineOne[0].markDefs, item)}>{item.text}</span> : item.text)}
     </Box>
-    <Box textAlign="center" w={["95%", "50%"]} margin="auto" mb={5}>
+    <Box textAlign="center" w={["85%", "50%"]} margin="auto" mb={5}>
       {
       section.titleLineTwo?.map((item, index) => item.children[0].marks.length ? 
-      <Box style={getBoxClassNames(item.children[0].marks[0], section.titleLineTwo[index].markDefs, item.children[0])}>{item.children[0].text}</Box> : 
-      <Box my={2} mx={3} textAlign="left"><CheckIcon mr={2}></CheckIcon>{item.children[0].text}</Box>)
+      <Box fontSize={["14px","24px"]} pb={1}  style={getBoxClassNames(item.children[0].marks[0], section.titleLineTwo[index].markDefs, item.children[0])}>{item.children[0].text}</Box> : 
+      <Box my={2} mx={3} textAlign="left" fontSize={["14px","24px"]} pb={1}><CheckIcon mr={2}></CheckIcon>{item.children[0].text}</Box>)
       }
     </Box>
     <Box textAlign="center" my={5}>
@@ -24,7 +24,7 @@ return (
         <small color={section.ctaColor.hex}>{section.CtalineTwo}</small>
       </Link>
     </Box>
-    <Box textAlign="center" fontSize="1rem" fontWeight="400">
+    <Box textAlign="center" fontSize={["0.7rem","1rem"]} fontWeight="400">
       {section.lineThree[0]?.children.map(item => item.marks.length ? <span style={getBoxClassNames(item.marks[0], section.lineThree[0].markDefs, item)}>{item.text}</span> : item.text)}
     </Box>
   </Box>
