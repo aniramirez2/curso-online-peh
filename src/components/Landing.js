@@ -6,9 +6,11 @@ import { MainSection } from './MainSection';
 import { LearningSection } from './LearningsSection';
 import { MoreInfoSection } from './moreInfoSection';
 import { CopyrightSection } from './copyrightSection';
+import axios from 'axios';
 
 export const Landing = () => {
 	const [data, setData] = useState([]);
+	const [whatsapp, setWhatsapp] = useState('');
 	const { id } = useParams();
 	const navigate = useNavigate();
 
@@ -17,7 +19,7 @@ export const Landing = () => {
 			const { data  } = await api.get();
 			const sections = data.result.find(item => item._id === "da59f881-f087-47b2-8e22-dc7c0b070981").content;
 			sections.forEach(element => {				
-				element.whatsapp = id;
+				element.whatsapp = whatsapp;
 			});
 			setData(sections);
 		 } catch (error) {
@@ -25,8 +27,22 @@ export const Landing = () => {
 		 }
 	 };
 
+	const validateId = async () => {
+		const api = axios.create({
+			baseURL: `https://tienda.admhost.site/wp-content/plugins/landingcreator/callback.php?pid=${id}`,
+		});
+		try {
+			const { data } = api.get();
+			console.log("data", data);
+			setWhatsapp(data._billing_phone);
+			return true;
+		} catch (error) {
+			return false;
+		}
+	}
+
 	useEffect(() => {
-		if (id) {
+		if (validateId()) {
 			getData();
 		 } else {
 			navigate('/')
