@@ -28,12 +28,16 @@ export const Landing = () => {
 	 };
 
 	const validateId = async () => {
-		const api = axios.create({
-			baseURL: `https://tienda.admhost.site/wp-content/plugins/landingcreator/callback.php?pid=${id}`,
-		});
 		try {
-			const { data } = api.get();
-			console.log("data", data);
+			const { data }  = await axios.get('http://tienda.admhost.site/wp-content/plugins/landingcreator/callback.php', {
+				   params: {
+				  	pid: id
+				   },
+				   headers: {
+					'Content-Type': 'text/json'
+				   }
+				});
+			console.log("data", data._billing_phone);
 			setWhatsapp(data._billing_phone);
 			return true;
 		} catch (error) {
@@ -42,18 +46,20 @@ export const Landing = () => {
 	}
 
 	useEffect(() => {
-		if (validateId()) {
-			getData();
-		 } else {
-			navigate('/')
-		 }
+		validateId().then((value) => {
+			if (value) {
+				getData();
+			} else {
+				navigate('/')
+			}
+		})
 		 // eslint-disable-next-line
-	 }, []);
+	 }, [whatsapp]);
 
 	return (
 		<>
 			{data.map(section => (
-				<>
+				<div key={section._key} >
 				{section.sectionType === 'main' ? 
 				(
 				<MainSection key={section._key} section={section}/>
@@ -73,7 +79,7 @@ export const Landing = () => {
 				<CopyrightSection key={section._key} section={section} />
 				):null
 				}
-			</>
+			</div>
 			))}
 		</>
 	);

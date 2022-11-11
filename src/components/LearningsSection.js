@@ -8,22 +8,22 @@ export const LearningSection = ({section}) => {
 return (
   <Box height={["auto", "auto"]} py={[8, 20]} key={section.sectionType} backgroundColor={section.backgroundColor.hex} color={section.textColor.hex} id={section.sectionType}>
     <Box my={[0 ,10]} textAlign="center" fontSize={["28px","48px"]} width={["80%", "auto"]} margin="auto" py={5}>
-     {section.lineOne[0]?.children.map(item => item.marks.length ? <span style={getBoxClassNames(item.marks[0], section.lineOne[0].markDefs, item)}>{item.text}</span> : item.text)}
+     {section.lineOne[0]?.children.map(item => item.marks.length ? <span style={getBoxClassNames(item.marks[0], section.lineOne[0].markDefs, item)} key={item.text}>{item.text}</span> : item.text)}
     </Box>
     <Box mt={5} justifyContent={["center","space-around"]} display={['block', 'flex']}>
       {section.titleLineTwo? 
       <Box w={["90%","18%"]} fontSize={["14px","24px"]} textAlign={["center", "center"]} mx={5} mb={[6,0]}>
-        {section.titleLineTwo[0]?.children.map(item => item.marks.length ? <span style={getBoxClassNames(item.marks[0], section.titleLineTwo[0].markDefs, item)}>{item.text}</span> : item.text)}
+        {section.titleLineTwo[0]?.children.map(item => item.marks.length ? <span style={getBoxClassNames(item.marks[0], section.titleLineTwo[0].markDefs, item)} key={item.text}>{item.text}</span> : item.text)}
       </Box> : null
       }
       {section.lineThree?
       <Box w={["90%","18%"]} fontSize={["14px","24px"]} textAlign={["center", "center"]} mx={5} mb={[6,0]}>
-        {section.lineThree[0]?.children.map(item => item.marks.length ? <span style={getBoxClassNames(item.marks[0], section.lineThree[0].markDefs, item)}>{item.text}</span> : item.text)}
+        {section.lineThree[0]?.children.map(item => item.marks.length ? <span style={getBoxClassNames(item.marks[0], section.lineThree[0].markDefs, item)} key={item.text}>{item.text}</span> : item.text)}
       </Box>:null
       }
       {section.lineFour?
       <Box w={["90%","18%"]} fontSize={["14px","24px"]} textAlign={["center", "center"]} mx={5} mb={[6,0]}>
-        {section.lineFour[0]?.children.map(item => item.marks.length ? <span style={getBoxClassNames(item.marks[0], section.lineFour[0].markDefs, item)}>{item.text}</span> : item.text)}
+        {section.lineFour[0]?.children.map(item => item.marks.length ? <span style={getBoxClassNames(item.marks[0], section.lineFour[0].markDefs, item)} key={item.text}>{item.text}</span> : item.text)}
       </Box>:null
       }
     </Box>
@@ -54,7 +54,7 @@ return (
 
     {section.lineFive?
     <Box textAlign="center" fontSize={["12px","18px"]} mb={8} width={["65%","auto"]} margin="auto">
-        {section.lineFive[0]?.children.map(item => item.marks.length ? <span style={getBoxClassNames(item.marks[0], section.lineFive[0].markDefs, item)}>{item.text}</span> : item.text)}
+        {section.lineFive[0]?.children.map(item => item.marks.length ? <span style={getBoxClassNames(item.marks[0], section.lineFive[0].markDefs, item)} key={item.text}>{item.text}</span> : item.text)}
       
     </Box>: null
     }

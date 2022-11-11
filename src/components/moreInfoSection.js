@@ -9,13 +9,13 @@ export const MoreInfoSection = ({section}) => {
 return (
   <Box py={[5,8]} height={["auto", "auto"]} key={section.sectionType} backgroundColor={section.backgroundColor.hex} color={section.textColor.hex} id={section.sectionType}>
     <Box py={[5,10]} textAlign="center" fontSize={["28px", "48px"]} lineHeight="1.1em" fontWeight="500">
-      {section.lineOne[0]?.children.map(item => item.marks.length ? <span style={getBoxClassNames(item.marks[0], section.lineOne[0].markDefs, item)}>{item.text}</span> : item.text)}
+      {section.lineOne[0]?.children.map(item => item.marks.length ? <span style={getBoxClassNames(item.marks[0], section.lineOne[0].markDefs, item)} key={item.text}>{item.text}</span> : item.text)}
     </Box>
     <Box textAlign="center" w={["85%", "50%"]} margin="auto" mb={5}>
       {
       section.titleLineTwo?.map((item, index) => item.children[0].marks.length ? 
-      <Box fontSize={["14px","24px"]} pb={1}  style={getBoxClassNames(item.children[0].marks[0], section.titleLineTwo[index].markDefs, item.children[0])}>{item.children[0].text}</Box> : 
-      <Box my={2} mx={3} textAlign="left" fontSize={["14px","24px"]} pb={1}><CheckIcon mr={2}></CheckIcon>{item.children[0].text}</Box>)
+      <Box key={item.text} fontSize={["14px","24px"]} pb={1}  style={getBoxClassNames(item.children[0].marks[0], section.titleLineTwo[index].markDefs, item.children[0])}>{item.children[0].text}</Box> : 
+      <Box key={item.text} my={2} mx={3} textAlign="left" fontSize={["14px","24px"]} pb={1}><CheckIcon mr={2}></CheckIcon>{item.children[0].text}</Box>)
       }
     </Box>
     <Box textAlign="center" my={5}>
@@ -25,7 +25,7 @@ return (
       </Link>
     </Box>
     <Box textAlign="center" fontSize={["0.7rem","1rem"]} fontWeight="400">
-      {section.lineThree[0]?.children.map(item => item.marks.length ? <span style={getBoxClassNames(item.marks[0], section.lineThree[0].markDefs, item)}>{item.text}</span> : item.text)}
+      {section.lineThree[0]?.children.map(item => item.marks.length ? <span key={item.text} style={getBoxClassNames(item.marks[0], section.lineThree[0].markDefs, item)}>{item.text}</span> : item.text)}
     </Box>
   </Box>
 )

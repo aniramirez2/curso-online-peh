@@ -10,15 +10,15 @@ export const MainSection = ({section}) => {
 return (
 <Box px={9} pt={10} mb={30} height="100vh" key={section.sectionType} backgroundColor={section.backgroundColor.hex } color={section.textColor.hex} id="section1">
   <Box py={4} textAlign="center" textTransform="uppercase" fontFamily="Montserrat, sans-serif" fontSize={["14px","18px"]}>
-    {<h4>{section.lineOne[0].children.map(item => item.marks.length ? <Box style={getBoxClassNames(item.marks[0], section.lineOne[0].markDefs, item)}>{item.text}</Box> : item.text)}</h4>}
+    {<h4>{section.lineOne[0].children.map(item => item.marks.length ? <Box style={getBoxClassNames(item.marks[0], section.lineOne[0].markDefs, item)} key={item.text}>{item.text}</Box> : item.text)}</h4>}
   </Box>
   <Box w={["100%", "70%"]} margin="auto" fontSize={["28px", "48px"]} fontFamily="oswaldregular" lineHeight="1.2em" fontWeight="500" textAlign="center">
     <h2>
-      {section.titleLineTwo[0].children.map(item => item.marks.length ? <span style={getBoxClassNames(item.marks[0], section.titleLineTwo[0].markDefs, item)}>{item.text}</span> : item.text)}
+      {section.titleLineTwo[0].children.map(item => item.marks.length ? <span style={getBoxClassNames(item.marks[0], section.titleLineTwo[0].markDefs, item)} key={item.text}>{item.text}</span> : item.text)}
     </h2>
   </Box>
   <Box textAlign="center" py={4} fontSize={["14px","24px"]} lineHeight="1.1em" fontFamily="sfuitextmedium" fontStyle="italic">
-    {section.lineThree[0].children.map(item => item.marks.length ? <span style={getBoxClassNames(item.marks[0], section.lineThree[0].markDefs, item)}>{item.text}</span> : item.text)}
+    {section.lineThree[0].children.map(item => item.marks.length ? <span style={getBoxClassNames(item.marks[0], section.lineThree[0].markDefs, item)} key={item.text}>{item.text}</span> : item.text)}
   </Box>
   <Box justifyContent="center" display={['inline', 'flex']}>
     <Box w={["100%", "30%"]}>
@@ -28,7 +28,7 @@ return (
     </Box>
     <Box w={["95%","30%"]} py={[5,20]} textAlign="center">
       <Box fontSize={["14px","24px"]}>
-        {section.lineFour[0].children.map(item => item.marks.length ? <span style={getBoxClassNames(item.marks[0], section.lineFour[0].markDefs, item)}>{item.text}</span> : item.text)}
+        {section.lineFour[0].children.map(item => item.marks.length ? <span style={getBoxClassNames(item.marks[0], section.lineFour[0].markDefs, item)} key={item.text}>{item.text}</span> : item.text)}
       </Box>
       <Box py={5} textAlign="center">
         <Link href={`https://api.whatsapp.com/send?phone=${section.whatsapp}`} target="_blank" display="block" height="70px" width={["100%","488px"]} borderRadius="5px" margin="auto" boxShadow="#6a6a6a" backgroundColor={section.ctaBackgroundColor.hex} >
@@ -37,7 +37,7 @@ return (
         </Link>
       </Box>
       <Box>
-        {section.lineFive[0].children.map(item => item.marks.length ? <Box style={getBoxClassNames(item.marks[0], section.lineFive[0].markDefs, item)}>{item.text}</Box> : item.text)}
+        {section.lineFive[0].children.map(item => item.marks.length ? <Box style={getBoxClassNames(item.marks[0], section.lineFive[0].markDefs, item)} key={item.text}>{item.text}</Box> : item.text)}
       </Box>
     </Box>
   </Box>
