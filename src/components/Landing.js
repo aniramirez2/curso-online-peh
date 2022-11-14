@@ -29,7 +29,7 @@ export const Landing = () => {
 
 	const validateId = async () => {
 		try {
-			const { data }  = await axios.get('http://tienda.admhost.site/wp-content/plugins/landingcreator/callback.php', {
+			const { data }  = await axios.get('https://tienda.admhost.site/wp-content/plugins/landingcreator/callback.php', {
 				   params: {
 				  	pid: id
 				   },
