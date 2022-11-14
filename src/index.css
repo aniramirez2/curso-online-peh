@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Gotham Black';
+    src: local('Gotham Black'), url(./fonts/Gotham_Black_Regular.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'sfuitextheavy';
+    src: local('sfuitextheavy'), url(./fonts/FontsFree-Net-SF-UI-Text-Heavy.ttf) format('truetype');
+}
+body {
+    font-family: 'Gotham Black';
+}

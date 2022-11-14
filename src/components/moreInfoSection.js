@@ -7,7 +7,7 @@ export const MoreInfoSection = ({section}) => {
     return markDefs.find(item => item._key === id) ? {'color': markDefs[0].hex} : {'textDecoration': children.marks[0]}
   }
 return (
-  <Box py={[5,8]} height={["auto", "auto"]} key={section.sectionType} backgroundColor={section.backgroundColor.hex} color={section.textColor.hex} id={section.sectionType}>
+  <Box py={[5,8]} height={["auto", "auto"]} key={section.sectionType} backgroundColor={section.backgroundColor.hex} color={section.textColor.hex} id={section.sectionType} fontFamily="oswaldregular">
     <Box py={[5,10]} textAlign="center" fontSize={["28px", "48px"]} lineHeight="1.1em" fontWeight="500">
       {section.lineOne[0]?.children.map(item => item.marks.length ? <span style={getBoxClassNames(item.marks[0], section.lineOne[0].markDefs, item)} key={item.text}>{item.text}</span> : item.text)}
     </Box>
@@ -19,12 +19,12 @@ return (
       }
     </Box>
     <Box textAlign="center" my={5}>
-      <Link href={`https://api.whatsapp.com/send?phone=${section.whatsapp}`} target="_blank" display="block" height="70px" width={["95%","488px"]} borderRadius="5px" margin="auto" boxShadow="#6a6a6a" backgroundColor={section.ctaBackgroundColor.hex} >
-      <Box fontSize={["16px","22px"]} pt={3} color={section.ctaColor.hex}>{section.CtalineOne}</Box>
-        <small color={section.ctaColor.hex}>{section.CtalineTwo}</small>
+      <Link href={`https://api.whatsapp.com/send?phone=${section.whatsapp}`} target="_blank" display="block" height="70px" width={["95%","488px"]} borderRadius="5px" margin="auto" boxShadow="#6a6a6a" backgroundColor={section.ctaBackgroundColor.hex} fontFamily="sfuitextheavy">
+      <Box fontSize={["16px","28px"]} pt={2} lineHeight="1.1em" color={section.ctaColor.hex}>{section.CtalineOne}</Box>
+        <Box fontSize={16} color={section.ctaColor.hex}>{section.CtalineTwo}</Box>
       </Link>
     </Box>
-    <Box textAlign="center" fontSize={["0.7rem","1rem"]} fontWeight="400">
+    <Box textAlign="center" fontSize={["0.7rem","18px"]} fontWeight="500" fontStyle="italic" fontFamily="Montserrat, sans-serif">
       {section.lineThree[0]?.children.map(item => item.marks.length ? <span key={item.text} style={getBoxClassNames(item.marks[0], section.lineThree[0].markDefs, item)}>{item.text}</span> : item.text)}
     </Box>
   </Box>

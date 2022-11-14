@@ -8,12 +8,12 @@ export const CopyrightSection = ({section}) => {
 return (
   <Box height={["125vh", "auto"]} key={section.sectionType} backgroundColor={section.backgroundColor.hex} color={section.textColor.hex} id={section.sectionType}>
     <Flex justifyContent="center">
-      <img style={{'margin':'auto'}} alt="" src={`https://cdn.sanity.io/images/w9w13qo7/production/${section.image.asset._ref.split('-')[1] + '-' +section.image.asset._ref.split('-')[2]}.png`} />
+      <img width="40%" style={{'margin':'auto'}} alt="" src={`https://cdn.sanity.io/images/w9w13qo7/production/${section.image.asset._ref.split('-')[1] + '-' +section.image.asset._ref.split('-')[2]}.png`} />
     </Flex>
-    <Box textAlign="center" py={4} fontSize={["14px","24px"]} margin="auto" w={["85%","50%"]}>
+    <Box textAlign="center" py={4} fontSize={["14px","18px"]} margin="auto" w={["85%","70%"]} fontFamily="poppinsmedium">
       {section.lineOne[0]?.children.map(item => item.marks.length ? <span key={item.text} style={getBoxClassNames(item.marks[0], section.lineOne[0].markDefs, item)}>{item.text}</span> : item.text)}
     </Box>
-    <Box textAlign="justify" margin="auto" w={["85%","50%"]} mb={5} flexWrap="wrap" fontSize={["10px", "12px"]}>
+    <Box textAlign="justify" margin="auto" w={["85%","70%"]} mb={5} flexWrap="wrap" fontSize={["10px", "12px"]} fontFamily="oswaldregular">
       {section.titleLineTwo[0].children.map(item => item.marks.length ? <span key={item.text} style={getBoxClassNames(item.marks[0], section.titleLineTwo[0].markDefs, item)}>{item.text}</span> : item.text)}
     </Box>
   </Box>
