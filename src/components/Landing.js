@@ -21,6 +21,8 @@ export const Landing = () => {
 			sections.forEach(element => {				
 				element.whatsapp = whatsapp;
 			});
+
+			console.log("data", data);
 			setData(sections);
 		 } catch (error) {
 			console.log('error', error);
@@ -37,7 +39,6 @@ export const Landing = () => {
 					'Content-Type': 'text/json'
 				   }
 				});
-			console.log("data", data._billing_phone);
 			setWhatsapp(data._billing_phone);
 			return true;
 		} catch (error) {
