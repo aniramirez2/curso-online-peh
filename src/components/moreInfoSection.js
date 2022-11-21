@@ -7,7 +7,7 @@ export const MoreInfoSection = ({section}) => {
     return markDefs.find(item => item._key === id) ? {'color': markDefs[0].hex} : {'textDecoration': children.marks[0]}
   }
 return (
-  <Box py={[5,8]} height={["auto", "auto"]} key={section.sectionType} backgroundColor={section.backgroundColor.hex} color={section.textColor.hex} id={section.sectionType} fontFamily="oswaldregular">
+  <Box py={[5,8]} height={["auto", "auto"]} key={section.sectionType} backgroundImage="url('https://storage.builderall.com//franquias/2/6203456/editor-html/6882458.png')" color={section.textColor.hex} id={section.sectionType} fontFamily="oswaldregular">
     <Box py={[5,10]} textAlign="center" fontSize={["30px", "48px"]} lineHeight="1.1em" fontWeight="500">
       {section.lineOne[0]?.children.map(item => item.marks.length ? <span style={getBoxClassNames(item.marks[0], section.lineOne[0].markDefs, item)} key={item.text}>{item.text}</span> : item.text)}
     </Box>
