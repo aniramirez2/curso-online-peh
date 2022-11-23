@@ -8,7 +8,7 @@ export const MainSection = ({section}) => {
   }
 
 return (
-<Box px={9} pt={10} pb={['0', '50px']} key={section.sectionType} backgroundImage="url('https://storage.builderall.com//franquias/2/6203456/editor-html/6882458.png')" color={section.textColor.hex} id="section1">
+<Box px={9} pt={1} pb={['0', '50px']} key={section.sectionType} backgroundImage="url('https://storage.builderall.com//franquias/2/6203456/editor-html/6882458.png')" color={section.textColor.hex} id="section1">
   <Box py={4} fontStyle="italic" textAlign="center" textTransform="uppercase" fontFamily="Montserrat, sans-serif" fontSize={["12px","18px"]}>
     {<h4>{section.lineOne[0].children.map(item => item.marks.length ? <Box style={getBoxClassNames(item.marks[0], section.lineOne[0].markDefs, item)} key={item.text}>{item.text}</Box> : item.text)}</h4>}
   </Box>
