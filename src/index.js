@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import {Landing}  from './components/Landing';
 import { extendTheme, ChakraProvider } from '@chakra-ui/react';
+import './index.css';
 import {
   BrowserRouter as Router,
   Routes,

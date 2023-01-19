@@ -1,11 +1,10 @@
-@font-face {
-    font-family: 'Gotham Black';
-    src: local('Gotham Black'), url(./fonts/Gotham_Black_Regular.ttf) format('truetype');
-}
-@font-face {
-    font-family: 'sfuitextheavy';
-    src: local('sfuitextheavy'), url(./fonts/FontsFree-Net-SF-UI-Text-Heavy.ttf) format('truetype');
-}
-body {
-    font-family: 'Gotham Black';
-}
+@font-face {  font-family: 'poppinsmedium';  src: url('https://cheetah-templates.builderall.com/storage/user_files/133648/fonts/poppinsmedium.ttf') format('truetype');}
+@font-face {  font-family: 'poppinsblod';  src: url('https://cheetah-templates.builderall.com/storage/user_files/133648/fonts/poppinsblod.ttf') format('truetype');}
+@font-face {  font-family: 'bebas';  src: url('https://cheetah-templates.builderall.com/storage/user_files/133648/fonts/bebas.ttf') format('truetype');}
+@font-face {  font-family: 'poppinsregular';  src: url('https://cheetah-templates.builderall.com/storage/user_files/133648/fonts/poppinsregular.ttf') format('truetype');}
+@font-face {  font-family: 'sfuitextheavy';  src: url('https://cheetah-templates.builderall.com/storage/user_files/133648/fonts/sfuitextheavy.ttf') format('truetype');}
+@font-face {  font-family: 'sfuitextmedium';  src: url('https://cheetah-templates.builderall.com/storage/user_files/133648/fonts/sfuitextmedium.ttf') format('truetype');}
+@font-face {  font-family: 'sfuitextregular';  src: url('https://cheetah-templates.builderall.com/storage/user_files/133648/fonts/sfuitextregular.ttf') format('truetype');}
+@font-face {  font-family: 'sfuitextsemibold';  src: url('https://cheetah-templates.builderall.com/storage/user_files/133648/fonts/sfuitextsemibold.ttf') format('truetype');}
+@font-face {  font-family: 'oswaldregular';  src: url('https://cheetah-templates.builderall.com/storage/user_files/133648/fonts/oswaldregular.ttf') format('truetype');}
+@font-face {  font-family: 'oswaldbold';  src: url('https://cheetah-templates.builderall.com/storage/user_files/133648/fonts/oswaldbold.ttf') format('truetype');};

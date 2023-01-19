@@ -30,9 +30,9 @@ return (
       <Box fontSize={["14px","24px"]} lineHeight="1.1em">
         {section.lineFour[0].children.map(item => item.marks.length ? <span style={getBoxClassNames(item.marks[0], section.lineFour[0].markDefs, item)} key={item.text}>{item.text}</span> : item.text)}
       </Box>
-      <Box py={5} textAlign="center">
+      <Box py={4} textAlign="center">
         <Link href={`https://api.whatsapp.com/send?phone=${section.whatsapp}`} target="_blank" display="block" height="70px" width={["100%","488px"]} borderRadius="5px" margin="auto" backgroundColor={section.ctaBackgroundColor.hex} >
-          <Box pt={4} lineHeight="1.1em" fontSize={["19px","28px"]} pb={0} textTransform="uppercase" fontFamily="sfuitextheavy">{section.CtalineOne}</Box>
+          <Box pt={3} lineHeight="1em" fontSize={["19px","28px"]} pb={0} textTransform="uppercase" fontFamily="sfuitextheavy">{section.CtalineOne}</Box>
           <Box fontSize={["12px","16px"]} fontFamily="sfuitextregular">{section.CtalineTwo}</Box>
         </Link>
       </Box>
