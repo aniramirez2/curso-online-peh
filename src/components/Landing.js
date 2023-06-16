@@ -11,13 +11,14 @@ import axios from 'axios';
 export const Landing = () => {
 	const [data, setData] = useState([]);
 	const [whatsapp, setWhatsapp] = useState('');
-	const { id } = useParams();
+	const { id, lang } = useParams();
 	const navigate = useNavigate();
+	const [pageId, setPageId] = useState('')
 
 	const getData = async () => {
 		try {
 			const { data  } = await api.get();
-			const sections = data.result.find(item => item._id === "da59f881-f087-47b2-8e22-dc7c0b070981").content;
+			const sections = data.result.find(item => item._id === pageId).content;
 			sections.forEach(element => {				
 				element.whatsapp = whatsapp;
 			});
@@ -39,8 +40,11 @@ export const Landing = () => {
 					'Content-Type': 'text/json'
 				   }
 				});
-				console.log("data", data);
-			setWhatsapp(data.link1_whatsapp);
+				if(data._completed_date) {					
+					setWhatsapp(`${data.link1_whatsapp}`);
+				} else {
+					navigate('/')
+				}
 			return true;
 		} catch (error) {
 			return false;
@@ -48,6 +52,20 @@ export const Landing = () => {
 	}
 
 	useEffect(() => {
+		switch (lang) {
+			case 'es':
+				setPageId('da59f881-f087-47b2-8e22-dc7c0b070981');
+				break;
+			case 'en':
+				setPageId('3578220f-1eb9-47b7-ba7a-6eacc6ebe5fd');
+				break;
+			case 'pt':
+				setPageId('6fe309db-4f44-48ce-8d20-9165313915ae');
+				break;
+			default:
+				setPageId('da59f881-f087-47b2-8e22-dc7c0b070981');
+				break;
+		}
 		validateId().then((value) => {
 			if (value) {
 				getData();

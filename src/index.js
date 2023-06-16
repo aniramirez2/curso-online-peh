@@ -7,7 +7,7 @@ import './index.css';
 import {
   BrowserRouter as Router,
   Routes,
-  Route
+  Route,
 } from "react-router-dom";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -22,15 +22,18 @@ const colors = {
 
 const theme = extendTheme({ colors });
 
+
 root.render(
 	<React.StrictMode>
 		<ChakraProvider theme={theme}>
 		<Router>
         <Routes>
-          <Route path="/:id" element={<Landing />} />
+          <Route path="/:id/:lang" element={<Landing />} />
+		  <Route path="/:id" element={<Landing />} />
           <Route path="/" element={<App />} />
         </Routes>
     </Router>
 		</ChakraProvider>
 	</React.StrictMode>
 );
+
