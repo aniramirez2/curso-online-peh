@@ -40,7 +40,7 @@ export const Landing = () => {
 					'Content-Type': 'text/json'
 				   }
 				});
-				if(data._completed_date) {					
+				if(data.orderDetail.status == "wc-completed") {					
 					setWhatsapp(`${data.link1_whatsapp}`);
 				} else {
 					navigate('/')
