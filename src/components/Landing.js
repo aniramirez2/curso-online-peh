@@ -41,14 +41,14 @@ export const Landing = () => {
   const validateId = async () => {
     try {
       const { data } = await axios.get(
-        `https://api.mmgenerator.club/api/subscription/customer/${id}`,
+        `https://mmgenerator-api-beubikow5q-uk.a.run.app/api/subscription/customer/${id}`,
         {
           headers: {
             "Content-Type": "text/json",
           },
         }
       );
-      //console.log("data callback", data);
+      console.log("data callback", data);
       if (data.statusCode === 200) {
         setWhatsapp(validarURL(data.whatsapp || ""));
       } else {
