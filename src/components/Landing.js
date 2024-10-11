@@ -41,7 +41,7 @@ export const Landing = () => {
   const validateId = async () => {
     try {
       const { data } = await axios.get(
-        `https://mmgenerator-api-production.up.railway.app/${id}`,
+        `https://mmgenerator-api-production.up.railway.app/api/subscription/customer/${id}`,
         {
           headers: {
             "Content-Type": "text/json",
