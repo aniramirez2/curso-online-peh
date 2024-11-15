@@ -50,7 +50,7 @@ export const Landing = () => {
       );
       console.log("data callback", data);
       if (data.statusCode === 200) {
-        setWhatsapp(validarURL(data.whatsapp || ""));
+        setWhatsapp(validarURL(data.data.whatsapp || ""));
       } else {
         navigate("/");
       }

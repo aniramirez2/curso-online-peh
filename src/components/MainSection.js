@@ -32,7 +32,7 @@ export const MainSection = ({ section }) => {
           </Box>
           <Box py={4} textAlign="center">
             <Link href={` ${section.whatsapp}`} target="_blank" display="block" height="70px" width={["100%", "488px"]} borderRadius="5px" margin="auto" backgroundColor={section.ctaBackgroundColor.hex} >
-              <Box pt={3} lineHeight="1em" fontSize={["19px", "28px"]} pb={0} textTransform="uppercase" fontFamily="sfuitextheavy">{section.CtalineOne}</Box>
+              <Box lineHeight="1em" fontSize={["19px", "28px"]} pb={0} pt={["18px", 3]} textTransform="uppercase" fontFamily="sfuitextheavy">{section.CtalineOne}</Box>
               <Box fontSize={["12px", "16px"]} fontFamily="sfuitextregular">{section.CtalineTwo}</Box>
             </Link>
           </Box>
