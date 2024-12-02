@@ -47,7 +47,7 @@ export const LearningSection = ({ section }) => {
         mt={2}
         justifyContent={["center", "space-around"]}
         display={["block", "flex"]}
-        fontFamily="sfuitextmedium"
+        fontFamily="oswaldregular"
         fontWeight="500"
       >
         {section.titleLineTwo ? (
@@ -151,7 +151,7 @@ export const LearningSection = ({ section }) => {
         <Box
           textAlign="center"
           my={5}
-          fontFamily="sfuitextheavy"
+          fontFamily="oswaldregular"
           fontWeight={400}
         >
           <Link
@@ -165,20 +165,20 @@ export const LearningSection = ({ section }) => {
             boxShadow="#6a6a6a"
             backgroundColor={section.ctaBackgroundColor.hex}
             color={section.ctaColor.hex}
-            lineHeight="1.5em"
+            lineHeight="1.3em"
             pt={2}
           >
             <Box
               fontSize={["19px", "28px"]}
               color={section.ctaColor.hex}
               pt={["6px", 2]}
-              fontFamily="sfuitextheavy"
+              fontFamily="oswaldbold"
             >
               {section.CtalineOne}
             </Box>
             <Text
               color={section.ctaColor.hex}
-              fontFamily="sfuitextregular"
+              fontFamily="oswaldregular"
               fontSize={["12px", "16px"]}
             >
               {section.CtalineTwo}

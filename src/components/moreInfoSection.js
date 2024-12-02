@@ -89,21 +89,21 @@ export const MoreInfoSection = ({ section }) => {
           margin="auto"
           boxShadow="#6a6a6a"
           backgroundColor={section.ctaBackgroundColor.hex}
-          fontFamily="sfuitextheavy"
+          fontFamily="oswaldbold"
         >
           <Box
             fontSize={["19px", "28px"]}
             pt={["17px", 4]}
             lineHeight="1.1em"
             color={section.ctaColor.hex}
-            fontFamily="sfuitextheavy"
+            fontFamily="oswaldbold"
           >
             {section.CtalineOne}
           </Box>
           <Box
             fontSize={["12px", "16px"]}
             color={section.ctaColor.hex}
-            fontFamily="sfuitextregular"
+            fontFamily="owsaldregular"
           >
             {section.CtalineTwo}
           </Box>

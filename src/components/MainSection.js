@@ -17,7 +17,7 @@ export const MainSection = ({ section }) => {
           {section.titleLineTwo[0].children.map(item => item.marks.length ? <span style={getBoxClassNames(item.marks[0], section.titleLineTwo[0].markDefs, item)} key={item.text}>{item.text}</span> : item.text)}
         </h1>
       </Box>
-      <Box textAlign="center" mx="auto" w={["77%", "100%"]} py={4} fontSize={["14px", "24px"]} lineHeight="1.1em" fontFamily="sfuitextmedium" fontStyle="italic" fontWeight="500">
+      <Box textAlign="center" mx="auto" w={["77%", "100%"]} py={4} fontSize={["14px", "24px"]} lineHeight="1.1em" fontFamily="oswaldregular" fontStyle="italic" fontWeight="500">
         {section.lineThree[0].children.map(item => item.marks.length ? <span style={getBoxClassNames(item.marks[0], section.lineThree[0].markDefs, item)} key={item.text}>{item.text}</span> : item.text)}
       </Box>
       <Box justifyContent="center" display={['inline', 'flex']}>
@@ -26,14 +26,14 @@ export const MainSection = ({ section }) => {
             <img style={{ border: '10px solid black', borderRadius: '10px' }} alt="" src={`https://cdn.sanity.io/images/w9w13qo7/production/${section.image.asset._ref.split('-')[1] + '-' + section.image.asset._ref.split('-')[2]}.png`} />
           </Link>
         </Box>
-        <Box w={["95%", "40%"]} py={[5, 20]} textAlign="center" fontFamily="sfuitextheavy" fontWeight={500} color="black">
+        <Box w={["95%", "40%"]} py={[5, 20]} textAlign="center" fontFamily="oswaldregular" fontWeight={500} color="black">
           <Box fontSize={["14px", "24px"]} lineHeight="1.1em">
             {section.lineFour[0].children.map(item => item.marks.length ? <span style={getBoxClassNames(item.marks[0], section.lineFour[0].markDefs, item)} key={item.text}>{item.text}</span> : item.text)}
           </Box>
           <Box py={4} textAlign="center">
             <Link href={` ${section.whatsapp}`} target="_blank" display="block" height="70px" width={["100%", "488px"]} borderRadius="5px" margin="auto" backgroundColor={section.ctaBackgroundColor.hex} >
-              <Box lineHeight="1em" fontSize={["19px", "28px"]} pb={0} pt={["18px", 3]} textTransform="uppercase" fontFamily="sfuitextheavy">{section.CtalineOne}</Box>
-              <Box fontSize={["12px", "16px"]} fontFamily="sfuitextregular">{section.CtalineTwo}</Box>
+              <Box lineHeight="1em" fontSize={["19px", "28px"]} pb={0} pt={["18px", 3]} textTransform="uppercase" fontFamily="oswaldbold">{section.CtalineOne}</Box>
+              <Box fontSize={["12px", "16px"]} fontFamily="oswaldregular">{section.CtalineTwo}</Box>
             </Link>
           </Box>
           <Box fontSize={["12px", "18px"]} fontFamily="Montserrat, sans-serif" fontStyle="italic" fontWeight={700}>
